@@ -1,0 +1,25 @@
+<li
+*ngIf="task" 
+class="d-flex justify-content-between"
+> 
+    <div>
+        <div class="fw-bold">{{task.title}}</div>
+        <span>{{task.cartegoria}}</span>
+    </div> 
+        <div>
+        <button 
+        *ngIf="!task.completed"
+        type="button" 
+        class="btn btn-success"
+        (click)="richiediCompletamento()"><!--richiesta di completamento dell'item al padre-->
+        
+        <i class="bi bi-check"></i></button>
+        <button 
+        type="button" 
+        class="btn btn-danger mx-3">
+        <i class="bi bi-trash"
+        (click)="rimuoviTask()"> <!--funzione che chiama il servizio per la rimozione del task-->
+        </i></button>
+    </div> 
+</li>
+

@@ -1,0 +1,19 @@
+<app-task-add></app-task-add>
+
+<hr>
+
+<span *ngIf="errorMessage">{{errorMessage}}</span> <!--tag con la funzione di mostrare un messaggio di errore qualora la richiesta di dati al server non andasse a buon fine-->
+
+<ul class=" container list-group list-group-flush">
+   <app-task-item
+   class="list-group-item"
+   *ngFor="let t of tasks"
+   [task]="t"
+   [ngClass]="{'bg-success': t.completed}"
+   (onRichiestaCompletamento)="completa($event)"><!--risposta del padre alla richiesta di completamento del figlio-->
+    </app-task-item>
+</ul>
+
+
+
+
